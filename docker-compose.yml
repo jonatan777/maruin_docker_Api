@@ -1,0 +1,40 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+networks: 
+  mysql-pelada-network2:
+    driver: bridge
+
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql-java-serverDB-maruin
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: jonatan
+      MYSQL_DATABASE: "pelada"
+    volumes:
+       - ./DB:/var/lib/mysql
+    networks:
+      - mysql-pelada-network2 
+
+  #adminer:
+  #  image: adminer
+  #  restart: always
+  #  ports:
+  #    - 8080:8080
+  #  networks:
+  #    - mysql-pelada-network2
+
+  maruin.fc:
+    build: './maruin.fc'
+    container_name: pelada-serverAPI-java
+    restart: always
+    ports:
+       - 8189:8189
+    networks:
+       - mysql-pelada-network2
+
