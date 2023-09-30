@@ -39,11 +39,13 @@ public class JogadorController {
     }
 
     // buscar todos registros no banco (pelada) e Tabela (jogadores)
+//    @RequestMapping(value = "/rest/create/document", produces = "text/plain;charset=UTF-8")
     @GetMapping
     public List<Jogador> findAll() {
         return jogadorService.listAllJogadores();
     }
 
+  //  @RequestMapping(value = "/rest/create/document", produces = "text/plain;charset=UTF-8")
     @GetMapping(path = {"/{id}"})
 public ResponseEntity<Jogador> findById(@PathVariable long id){
    return jogadorRepository.findById(id)
