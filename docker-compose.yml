@@ -19,15 +19,15 @@ services:
     volumes:
        - ./DB:/var/lib/mysql
     networks:
-      - mysql-pelada-network2 
+       - mysql-pelada-network2 
 
-  #adminer:
-  #  image: adminer
-  #  restart: always
-  #  ports:
-  #    - 8080:8080
-  #  networks:
-  #    - mysql-pelada-network2
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+       - 8080:8080
+    networks:
+       - mysql-pelada-network2
 
   maruin.fc:
     build: './maruin.fc'
