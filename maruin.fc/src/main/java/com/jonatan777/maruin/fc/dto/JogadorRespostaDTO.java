@@ -20,7 +20,6 @@ public class JogadorRespostaDTO {
 	private int expulsao;
 	private int pontos;
 	private int gols;
-	private int gols_sofridos;
 
 
 
@@ -42,9 +41,7 @@ public class JogadorRespostaDTO {
 			jogadores.getEmpates(),
 			jogadores.getExpulsao(),
 			jogadores.getPontos(),
-			jogadores.getGols(),
-			jogadores.getGols_sofridos()
-			
+			jogadores.getGols()
 			);
 
     }
@@ -62,8 +59,7 @@ public class JogadorRespostaDTO {
 			int empates, 
 			int expulsao, 
 			int pontos, 
-			int gols,
-			int gols_sofridos
+			int gols
 		
 		) {
 		
@@ -77,7 +73,6 @@ public class JogadorRespostaDTO {
 			this.expulsao = expulsao;
 			this.pontos = pontos;
 			this.gols = gols;
-			this.gols_sofridos = gols_sofridos;
 			
 	}
 
@@ -150,14 +145,6 @@ public class JogadorRespostaDTO {
 	public int getGols() {
 		return gols;
 	}
-
-
-
-
-	public int getGols_sofridos() {
-		return gols_sofridos;
-	}
-
 
 
 }

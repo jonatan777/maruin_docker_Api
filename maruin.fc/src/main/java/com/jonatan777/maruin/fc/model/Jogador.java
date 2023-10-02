@@ -26,7 +26,7 @@ public class Jogador {
     private int expulsao;	
 	private int pontos;		
 	private int gols;
-	private int gols_sofridos;
+	
 	
 
 
@@ -38,7 +38,7 @@ public class Jogador {
 
 
 
-	public Jogador(Long id, String nome, String imagen, String posicao, int jogos, int vitorias, int derrotas, int empates, int pontos, int expulsao, int gols, int gols_sofridos) {
+	public Jogador(Long id, String nome, String imagen, String posicao, int jogos, int vitorias, int derrotas, int empates, int pontos, int expulsao, int gols) {
 		    this.id = id;
 		    this.nome = nome;
 		    this.imagen = imagen;
@@ -50,7 +50,7 @@ public class Jogador {
 		    this.expulsao = expulsao;
 		    this.pontos = pontos;
 		    this.gols = gols;
-		    this.gols_sofridos = gols_sofridos;
+		  
 		}
 	
 	
@@ -60,8 +60,8 @@ public class Jogador {
    @Override
 	public String toString() {
 		return String.format(
-				"Jogadores[id=%d, nome='%s', imagen='%s', posicao='%s', jogos='%d', vitorias='%d', derrotas='%d' empates='%d', expulsao='%d', pontos='%d', gols='%d', gols_sofridos='%d']",
-				id,  nome, imagen, posicao, jogos, vitorias, derrotas, empates, expulsao, pontos, gols, gols_sofridos);
+				"Jogadores[id=%d, nome='%s', imagen='%s', posicao='%s', jogos='%d', vitorias='%d', derrotas='%d' empates='%d', expulsao='%d', pontos='%d', gols='%d']",
+				id,  nome, imagen, posicao, jogos, vitorias, derrotas, empates, expulsao, pontos, gols);
 	}
 	
 	
@@ -160,18 +160,6 @@ public class Jogador {
 
 
 
-	public int getGols_sofridos() {
-		return gols_sofridos;
-	}
-
-
-
-	public void setGols_sofridos(int gols_sofridos) {
-		this.gols_sofridos = gols_sofridos;
-	}
-
-
-
    public Jogador transformaParaObjeto() {
       return null;
    }
@@ -195,7 +183,6 @@ public int hashCode() {
 	result = prime * result + expulsao;
 	result = prime * result + pontos;
 	result = prime * result + gols;
-	result = prime * result + gols_sofridos;
 	return result;
 }
 
@@ -245,8 +232,6 @@ public boolean equals(Object obj) {
 	if (pontos != other.pontos)
 		return false;
 	if (gols != other.gols)
-		return false;
-	if (gols_sofridos != other.gols_sofridos)
 		return false;
 	return true;
 }

@@ -78,7 +78,6 @@ public ResponseEntity<Jogador> findById(@PathVariable long id){
               record.setPontos(jogadores.getPontos());
               record.setExpulsao(jogadores.getExpulsao());
               record.setGols(jogadores.getGols());
-              record.setGols_sofridos(jogadores.getGols_sofridos());
     
               Jogador updated = jogadorRepository.save(record);
               return ResponseEntity.ok().body(updated);

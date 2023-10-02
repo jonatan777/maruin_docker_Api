@@ -72,8 +72,7 @@ public class JogadorDTO {
 			jogadorDTO.empates, 
 			jogadorDTO.expulsao, 
 			jogadorDTO.pontos, 
-			jogadorDTO.gols,
-			jogadorDTO.gols_sofridos);
+			jogadorDTO.gols);
 	}
 
 	public Long getId() {

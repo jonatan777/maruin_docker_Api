@@ -30,7 +30,7 @@ services:
        - mysql-pelada-network2
 
   maruin.fc:
-    build: './maruin.fc'
+   build: './maruin.fc'
     container_name: pelada-serverAPI-java
     restart: always
     ports:
