@@ -52,7 +52,7 @@ public class JogadorRepositoryHibernateImpl implements JogadorRepositoryHibernat
     @Override
     @Transactional
     public List<Jogador> findAllPontos() {
-        String qlString = "SELECT e FROM Jogador ORDER BY e.pontos DESC e WHERE e.pontos != 0 ";
+        String qlString = "SELECT e FROM Jogador e WHERE e.pontos != 0 ORDER BY e.pontos DESC ";
         TypedQuery<Jogador> query = entityManager.createQuery(qlString, Jogador.class);
         return query.getResultList();
     }
@@ -61,7 +61,7 @@ public class JogadorRepositoryHibernateImpl implements JogadorRepositoryHibernat
     @Override
     @Transactional
     public List<Jogador> findAllGols() {
-        String qlString = "SELECT e FROM Jogador ORDER BY e.gols DESC e WHERE e.gols != 0";
+        String qlString = "SELECT e FROM Jogador e WHERE e.gols != 0 ORDER BY e.gols DESC";
         TypedQuery<Jogador> query = entityManager.createQuery(qlString, Jogador.class);
         return query.getResultList();
     }
