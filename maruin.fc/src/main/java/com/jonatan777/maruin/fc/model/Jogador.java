@@ -14,7 +14,7 @@ public class Jogador {
     @Id
 	@GeneratedValue
 	(strategy=GenerationType.IDENTITY)
-	private Long id;                                     // id
+	private Long id; 
 	@NotNull                                            
 	private String nome;
 	private String imagen;           
@@ -29,14 +29,7 @@ public class Jogador {
 	
 	
 
-
-	
-	
 	public Jogador(){}
-
-
-
-
 
 	public Jogador(Long id, String nome, String imagen, String posicao, int jogos, int vitorias, int derrotas, int empates, int pontos, int expulsao, int gols) {
 		    this.id = id;
@@ -52,8 +45,6 @@ public class Jogador {
 		    this.gols = gols;
 		  
 		}
-	
-	
 	
 
 
@@ -164,10 +155,6 @@ public class Jogador {
       return null;
    }
 
-
-
-
-
 @Override
 public int hashCode() {
 	final int prime = 31;
@@ -185,10 +172,6 @@ public int hashCode() {
 	result = prime * result + gols;
 	return result;
 }
-
-
-
-
 
 @Override
 public boolean equals(Object obj) {
@@ -236,13 +219,6 @@ public boolean equals(Object obj) {
 	return true;
 }
 
-
-
-
-
-
-
-   	
 
 
 }
