@@ -15,11 +15,11 @@ public class JogadorRespostaDTO {
 	private String posicao;
 	private int jogos;
 	private int vitorias;
-	private int derrotas;
 	private int empates;
+	private int derrotas;
 	private int expulsao;
-	private int pontos;
 	private int gols;
+	private int pontos;	
 
 
 
@@ -37,11 +37,11 @@ public class JogadorRespostaDTO {
 			jogadores.getPosicao(),
 			jogadores.getJogos(),
 			jogadores.getVitorias(),
-			jogadores.getDerrotas(),
 			jogadores.getEmpates(),
+			jogadores.getDerrotas(),
 			jogadores.getExpulsao(),
-			jogadores.getPontos(),
-			jogadores.getGols()
+			jogadores.getGols(),
+			jogadores.getPontos()
 			);
 
     }
@@ -58,8 +58,8 @@ public class JogadorRespostaDTO {
 			int derrotas, 
 			int empates, 
 			int expulsao, 
-			int pontos, 
-			int gols
+			int gols, 
+			int pontos
 		
 		) {
 		
@@ -68,11 +68,11 @@ public class JogadorRespostaDTO {
 			this.imagen = imagen;
 			this.jogos = jogos;
 			this.vitorias = vitorias;
-			this.derrotas = derrotas;
 			this.empates = empates;
+			this.derrotas = derrotas;
 			this.expulsao = expulsao;
-			this.pontos = pontos;
 			this.gols = gols;
+			this.pontos = pontos;
 			
 	}
 
@@ -135,16 +135,18 @@ public class JogadorRespostaDTO {
 
 
 
-	public int getPontos() {
-		return pontos;
-	}
-
-
 
 
 	public int getGols() {
 		return gols;
 	}
+
+
+	public int getPontos() {
+		return pontos;
+	}
+
+
 
 
 }

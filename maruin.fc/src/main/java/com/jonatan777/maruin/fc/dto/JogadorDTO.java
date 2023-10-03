@@ -15,11 +15,11 @@ public class JogadorDTO {
 	private String posicao;
 	private int jogos;
 	private int vitorias;
-	private int derrotas;
 	private int empates;
+	private int derrotas;
 	private int expulsao;
-	private int pontos;
 	private int gols;
+    private int pontos;
 
 
 	public JogadorDTO() {
@@ -32,11 +32,11 @@ public class JogadorDTO {
 			String imagen, 
 			int jogos, 
 			int vitorias,
+			int empates,
 			int derrotas, 
-			int empates, 
 			int expulsao, 
-			int pontos, 
-			int gols
+			int gols,
+			int pontos
 			) {
 		this.id = id;
 		this.nome = nome;
@@ -44,11 +44,11 @@ public class JogadorDTO {
 		this.imagen = imagen;
 		this.jogos = jogos;
 		this.vitorias = vitorias;
-		this.derrotas = derrotas;
 		this.empates = empates;
+		this.derrotas = derrotas;
 		this.expulsao = expulsao;
-		this.pontos = pontos;
 		this.gols = gols;
+		this.pontos = pontos;
 	}
 
 	public Jogador transformaParaObjeto(JogadorDTO jogadorDTO) {
@@ -59,11 +59,13 @@ public class JogadorDTO {
 			jogadorDTO.posicao, 
 			jogadorDTO.jogos, 
 			jogadorDTO.vitorias, 
+			jogadorDTO.empates,
 			jogadorDTO.derrotas,
-			jogadorDTO.empates, 
 			jogadorDTO.expulsao, 
-			jogadorDTO.pontos, 
-			jogadorDTO.gols);
+			jogadorDTO.gols,
+			jogadorDTO.pontos
+			);
+
 	}
 
 	public Long getId() {
@@ -138,14 +140,7 @@ public class JogadorDTO {
 		this.expulsao = expulsao;
 	}
 
-	public int getPontos() {
-		return pontos;
-	}
-
-	public void setPontos(int pontos) {
-		this.pontos = pontos;
-	}
-
+	
 	public int getGols() {
 		return gols;
 	}
@@ -154,23 +149,31 @@ public class JogadorDTO {
 		this.gols = gols;
 	}
 
-	
+
+	public int getPontos() {
+		return pontos;
+	}
+
+	public void setPontos(int pontos) {
+		this.pontos = pontos;
+	}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + derrotas;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
+		result = prime * result + ((posicao == null) ? 0 : posicao.hashCode());
+		result = prime * result + jogos;
+		result = prime * result + vitorias;
 		result = prime * result + empates;
+		result = prime * result + derrotas;
 		result = prime * result + expulsao;
 		result = prime * result + gols;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
-		result = prime * result + jogos;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + pontos;
-		result = prime * result + ((posicao == null) ? 0 : posicao.hashCode());
-		result = prime * result + vitorias;
 		return result;
 	}
 
@@ -183,41 +186,43 @@ public class JogadorDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		JogadorDTO other = (JogadorDTO) obj;
-		if (derrotas != other.derrotas)
-			return false;
-		if (empates != other.empates)
-			return false;
-		if (expulsao != other.expulsao)
-			return false;
-		if (gols != other.gols)
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (imagen == null) {
-			if (other.imagen != null)
-				return false;
-		} else if (!imagen.equals(other.imagen))
-			return false;
-		if (jogos != other.jogos)
 			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
-		if (pontos != other.pontos)
+		if (imagen == null) {
+			if (other.imagen != null)
+				return false;
+		} else if (!imagen.equals(other.imagen))
 			return false;
 		if (posicao == null) {
 			if (other.posicao != null)
 				return false;
 		} else if (!posicao.equals(other.posicao))
 			return false;
+		if (jogos != other.jogos)
+			return false;
 		if (vitorias != other.vitorias)
+			return false;
+		if (empates != other.empates)
+			return false;
+		if (derrotas != other.derrotas)
+			return false;
+		if (expulsao != other.expulsao)
+			return false;
+		if (gols != other.gols)
+			return false;
+		if (pontos != other.pontos)
 			return false;
 		return true;
 	}
+
+	
 
 }

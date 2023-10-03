@@ -21,29 +21,27 @@ public class Jogador {
 	private String posicao;
 	private int jogos;
 	private int vitorias;
-    private int derrotas;
 	private int empates;
+    private int derrotas;
     private int expulsao;	
-	private int pontos;		
 	private int gols;
-	
+	private int pontos;	
 	
 
 	public Jogador(){}
 
-	public Jogador(Long id, String nome, String imagen, String posicao, int jogos, int vitorias, int derrotas, int empates, int pontos, int expulsao, int gols) {
+	public Jogador(Long id, String nome, String imagen, String posicao, int jogos, int vitorias, int empates, int derrotas, int expulsao, int gols, int pontos) {
 		    this.id = id;
 		    this.nome = nome;
 		    this.imagen = imagen;
 		    this.posicao = posicao;
 		    this.jogos = jogos;
 		    this.vitorias = vitorias;
+			this.empates = empates;
             this.derrotas = derrotas;
-		    this.empates = empates;
 		    this.expulsao = expulsao;
-		    this.pontos = pontos;
 		    this.gols = gols;
-		  
+		    this.pontos = pontos;
 		}
 	
 
@@ -51,8 +49,8 @@ public class Jogador {
    @Override
 	public String toString() {
 		return String.format(
-				"Jogadores[id=%d, nome='%s', imagen='%s', posicao='%s', jogos='%d', vitorias='%d', derrotas='%d' empates='%d', expulsao='%d', pontos='%d', gols='%d']",
-				id,  nome, imagen, posicao, jogos, vitorias, derrotas, empates, expulsao, pontos, gols);
+				"Jogadores[id=%d, nome='%s', imagen='%s', posicao='%s', jogos='%d', vitorias='%d', empates='%d', derrotas='%d', expulsao='%d', gols='%d', pontos='%d']",
+				id,  nome, imagen, posicao, jogos, vitorias, empates, derrotas, expulsao, gols, pontos);
 	}
 	
 	
@@ -129,16 +127,6 @@ public class Jogador {
 	public void setExpulsao(int expulsao) {
 		this.expulsao = expulsao;
 	}
-
-
-		
-	public int getPontos() {
-		return pontos;
-	}
-	public void setPontos(int pontos) {
-		this.pontos = pontos;
-	}
-	
 	
 	
 	
@@ -148,6 +136,14 @@ public class Jogador {
 	public void setGols(int gols) {
 		this.gols = gols;
 	}
+
+	public int getPontos() {
+		return pontos;
+	}
+	public void setPontos(int pontos) {
+		this.pontos = pontos;
+	}
+	
 
 
 
@@ -165,11 +161,11 @@ public int hashCode() {
 	result = prime * result + ((posicao == null) ? 0 : posicao.hashCode());
 	result = prime * result + jogos;
 	result = prime * result + vitorias;
-	result = prime * result + derrotas;
 	result = prime * result + empates;
+	result = prime * result + derrotas;
 	result = prime * result + expulsao;
-	result = prime * result + pontos;
 	result = prime * result + gols;
+	result = prime * result + pontos;
 	return result;
 }
 
@@ -206,19 +202,21 @@ public boolean equals(Object obj) {
 		return false;
 	if (vitorias != other.vitorias)
 		return false;
-	if (derrotas != other.derrotas)
-		return false;
 	if (empates != other.empates)
+		return false;
+	if (derrotas != other.derrotas)
 		return false;
 	if (expulsao != other.expulsao)
 		return false;
-	if (pontos != other.pontos)
-		return false;
 	if (gols != other.gols)
+		return false;
+	if (pontos != other.pontos)
 		return false;
 	return true;
 }
 
+
+  
 
 
 }
