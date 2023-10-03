@@ -13,22 +13,14 @@ public class JogadorDTO {
 	private String nome;
 	private String imagen;
 	private String posicao;
-
 	private int jogos;
-
 	private int vitorias;
-
 	private int derrotas;
-
 	private int empates;
-
 	private int expulsao;
-
 	private int pontos;
-
 	private int gols;
 
-	private int gols_sofridos;
 
 	public JogadorDTO() {
 	}
@@ -44,8 +36,8 @@ public class JogadorDTO {
 			int empates, 
 			int expulsao, 
 			int pontos, 
-			int gols, 
-			int gols_sofridos) {
+			int gols
+			) {
 		this.id = id;
 		this.nome = nome;
 		this.posicao = posicao;
@@ -57,7 +49,6 @@ public class JogadorDTO {
 		this.expulsao = expulsao;
 		this.pontos = pontos;
 		this.gols = gols;
-		this.gols_sofridos = gols_sofridos;
 	}
 
 	public Jogador transformaParaObjeto(JogadorDTO jogadorDTO) {
@@ -163,13 +154,7 @@ public class JogadorDTO {
 		this.gols = gols;
 	}
 
-	public int getGols_sofridos() {
-		return gols_sofridos;
-	}
-
-	public void setGols_sofridos(int gols_sofridos) {
-		this.gols_sofridos = gols_sofridos;
-	}
+	
 
 	@Override
 	public int hashCode() {
@@ -179,7 +164,6 @@ public class JogadorDTO {
 		result = prime * result + empates;
 		result = prime * result + expulsao;
 		result = prime * result + gols;
-		result = prime * result + gols_sofridos;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
 		result = prime * result + jogos;
@@ -206,8 +190,6 @@ public class JogadorDTO {
 		if (expulsao != other.expulsao)
 			return false;
 		if (gols != other.gols)
-			return false;
-		if (gols_sofridos != other.gols_sofridos)
 			return false;
 		if (id == null) {
 			if (other.id != null)
