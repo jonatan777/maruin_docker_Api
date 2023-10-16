@@ -30,6 +30,10 @@ public class JogadorServiceHibernate {
       return jogadorRepositoryHibernate.findAllGols();
     }
 
+    public List<Jogador> listNomes() {
+      return jogadorRepositoryHibernate.findAllNomes();
+    }
+
      // buscar um jogador no banco referente ao id
     public Jogador getJogadorId(Long id) {
       return jogadorRepositoryHibernate.findById(id);

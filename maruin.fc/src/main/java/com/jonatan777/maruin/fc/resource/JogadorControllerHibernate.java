@@ -29,7 +29,11 @@ public class JogadorControllerHibernate {
 
 
 
-
+ // buscar todos registros com pontos > 0
+	@GetMapping(path = { "/nome" })
+	public List<Jogador> findNomes() {
+		return jogadorServiceHibernate.listNomes();
+	}
 
 	// buscar todos registros com pontos > 0
 	@GetMapping(path = { "/pontos" })

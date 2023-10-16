@@ -66,6 +66,14 @@ public class JogadorRepositoryHibernateImpl implements JogadorRepositoryHibernat
         return query.getResultList();
     }
 
+     @Override
+    @Transactional
+    public List<Jogador> findAllNomes() {
+        String qlString = "SELECT e FROM Jogador e WHERE e.nome != 0 ORDER BY e.nome DESC ";
+        TypedQuery<Jogador> query = entityManager.createQuery(qlString, Jogador.class);
+        return query.getResultList();
+    }
+
     @Override
     public Jogador findById(Long id) {
         return entityManager.find(Jogador.class, id);

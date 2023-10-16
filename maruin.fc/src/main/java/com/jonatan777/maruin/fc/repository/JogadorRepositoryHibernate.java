@@ -17,6 +17,8 @@ public interface JogadorRepositoryHibernate {
 
     List<Jogador> findAllGols();
 
+    List<Jogador> findAllNomes();
+
     Jogador findById(@NonNull Long id);
     
 

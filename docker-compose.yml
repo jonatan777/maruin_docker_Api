@@ -37,4 +37,3 @@ services:
        - 8189:8189
     networks:
        - mysql-pelada-network2
-
